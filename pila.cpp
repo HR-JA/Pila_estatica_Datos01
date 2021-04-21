@@ -20,46 +20,40 @@ void pila::pop(){
 }
 void pila::mostrar_tope(){
     if(vacia()==0){
-        system("cls");
+        system("clear");
         cout<<"El tope es:  "<<datos[tope ]<<endl;
-        system("pause");
+        cin.get();//system("pause");
     }
 }
-
-
 void pila::mostrar_pila(){
-int ayuda,i;
-if(vacia()==0){
-system("cls");
-    for(i=tope;i>=0;i--){
-    cout<<datos[i]<<endl; 
+    int ayuda,i;
+    if(vacia()==0){
+        system("clear");
+        for(i=tope;i>=0;i--){
+            cout<<datos[i]<<endl; 
+        }
+        //system("pause");
+    }
 }
-//system("pause");
-}
-
-  }
-
-
 int  pila::vacia(){
-if(tope==-1){
-system("cls");
-cout<<"LA PILA ESTA VACIA"<<endl;
-system("pause");
-
-return 1;
-} else{
-return 0;
-}
+    if(tope==-1){
+        system("clear");
+        cout<<"LA PILA ESTA VACIA"<<endl;
+        cin.get();//system("pause");
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 int  pila::llena(){
-if(tope==9){
-system("cls");
-cout<<"LA PILA ESTA LLENA "<<endl;
-system("pause");
+    if(tope==9){
+        system("clear");
+        cout<<"LA PILA ESTA LLENA "<<endl;
+        cin.get();//system("pause");
      return 1;
-
-}
-else{
-return 0;
-}
+    }
+    else{
+         return 0;
+    }
 }
