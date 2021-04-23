@@ -5,10 +5,10 @@ pila::pila(){
 void pila::push(){
     int x;
     if(llena()==0){
-        cout<<"ingresa numero"<<endl;
-        cin>>x;
+        //cout<<"ingresa numero"<<endl;
+        scanw("%d",&x);//cin>>x;
         tope ++;
-     datos[tope]=x;
+        datos[tope]=x;
      }
 
 }
@@ -19,27 +19,32 @@ void pila::pop(){
     }
 }
 void pila::mostrar_tope(){
+    GUI graf;
+    string n="El tope es: " + to_string(datos[tope]);
+    char const *Num = n.c_str();
     if(vacia()==0){
-        system("clear");
-        cout<<"El tope es:  "<<datos[tope ]<<endl;
-        cin.get();//system("pause");
+        clear();//system("clear");
+        graf.Msg(Num);//cout<<"El tope es:  "<<datos[tope ]<<endl;
+        //cin.get();//system("pause");
     }
 }
 void pila::mostrar_pila(){
-    int ayuda,i;
+    GUI graf;
+    int i;
+    clear();//system("clear");
     if(vacia()==0){
-        system("clear");
-        for(i=tope;i>=0;i--){
-            cout<<datos[i]<<endl; 
+        for(i=0;i<=tope;i++){
+            graf.pila(datos[i],i);//cout<<datos[i]<<endl; 
         }
         //system("pause");
     }
 }
 int  pila::vacia(){
+    GUI graf;
     if(tope==-1){
-        system("clear");
-        cout<<"LA PILA ESTA VACIA"<<endl;
-        cin.get();//system("pause");
+        //system("clear");
+        graf.Msg("LA PILA ESTA VACIA");//cout<<"LA PILA ESTA VACIA"<<endl;
+        //cin.get();//system("pause");
         return 1;
     }
     else{
@@ -47,10 +52,11 @@ int  pila::vacia(){
     }
 }
 int  pila::llena(){
+    GUI graf;
     if(tope==9){
-        system("clear");
-        cout<<"LA PILA ESTA LLENA "<<endl;
-        cin.get();//system("pause");
+        clear();//system("clear");
+        graf.Msg("LA PILA ESTA LLENA");//cout<<"LA PILA ESTA LLENA "<<endl;
+        ///cin.get();//system("pause");
      return 1;
     }
     else{

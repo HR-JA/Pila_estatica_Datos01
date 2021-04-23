@@ -1,6 +1,8 @@
 #ifndef PILA_H
 #define PILA_H
+#include "GUI.h"
 #include <iostream>
+#include <string>
 using namespace std;
 class pila{
     private: int datos[10],tope;

@@ -5,20 +5,22 @@
 using namespace std;
 int main(){
     pila p;
+    GUI graf;
     int opcion,num;
+    initscr();
     do{
-        system("clear");
-        p.mostrar_pila();
-        cout<<"\n\n[1].ingresar numero\n[2].Eliminar \n[3].Mostrar tope\n[4].Mostrar pila\n[5].salir"<<endl;
-        cin>>opcion;
-        cin.ignore();
+        //system("clear");
+        if(opcion!=3&&p.llena()==0)p.mostrar_pila();
+        opcion=graf.menu();//cout<<"\n\n[1].ingresar numero\n[2].Eliminar \n[3].Mostrar tope\n[4].Mostrar pila\n[5].salir"<<endl;
+        //cin.ignore();
         switch(opcion){
             case 1:p.push();break;
             case 2:p.pop();break;
             case 3:p.mostrar_tope();break;   
-            case 4:p.mostrar_pila();break;
-            case 5:break;
-            default: cout<<"Opcion no encontrada:404 "<<endl;
+            //case :p.mostrar_pila();break;
+            case 4:break;
+            //default: cout<<"Opcion no encontrada:404 "<<endl;
         }
-    }while(opcion!=5);
+    }while(opcion!=4);
+    endwin();
 }
